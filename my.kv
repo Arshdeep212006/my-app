@@ -1,0 +1,199 @@
+WindowManager:
+    LolWindow:
+    MainWindow:
+    SecondWindow:
+    ThirdWindow:
+    FourthWindow:
+    FifthWindow:
+    SixthWindow:
+    SeventhWindow:
+    EightWindow:
+
+<LolWindow>:
+    name: "lol"
+
+    GridLayout:
+        cols:1
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "Hey there how are you?"
+
+            TextInput:
+                id: lol
+                multiline: False
+
+        Button:
+            text: "Submit"
+            on_release:
+                app.root.current = "main" if lol.text == "yes" else "exit()"
+                root.manager.transition.direction = "left"
+
+<MainWindow>:
+    name: "main"
+
+    GridLayout:
+        cols:1
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "Do you want to play a Game?"
+
+        Button:
+            text: "YES"
+            on_release:
+                app.root.current = "second"
+                root.manager.transition.direction = "down"
+
+        Button:
+            text: "NO"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "up"
+
+
+<SecondWindow>:
+    name: "second"
+
+    GridLayout:
+        cols:1
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "Which Game you want to play?"
+
+
+        Button:
+            text: "PUBG"
+            on_release:
+                app.root.current = "third"
+                root.manager.transition.direction = "left"
+
+        Button:
+            text: "BRAWL STARS"
+            on_release:
+                app.root.current = "eight"
+                root.manager.transition.direction = "left"
+
+<ThirdWindow>:
+    name: "third"
+
+    GridLayout:
+        cols:1
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "So you want to play pubg?"
+
+            TextInput:
+                id: bro
+                multiline: False
+
+        Button:
+            text: "Submit"
+            on_release:
+                app.root.current = "fourth" if bro.text == "yes" else "second"
+                root.manager.transition.direction = "left"
+
+<FourthWindow>:
+    name: "fourth"
+
+    GridLayout:
+        cols:1
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "Are you good at the game?"
+
+            TextInput:
+                id: bro
+                multiline: False
+
+        Button:
+            text: "Submit"
+            on_release:
+                app.root.current = "fifth" if bro.text == "yes" else "sixth"
+                root.manager.transition.direction = "left"
+
+<FifthWindow>:
+    name: "fifth"
+
+    GridLayout:
+        cols:1
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "So you are a pro. good! then you have to carry me"
+
+        Button:
+            text: "Next"
+            on_release:
+                app.root.current = "seventh"
+                root.manager.transition.direction = "left"
+
+<SixthWindow>:
+    name: "sixth"
+
+    GridLayout:
+        cols:1
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "Ok so you are a noob . I dont care. let play"
+
+
+        Button:
+            text: "Next"
+            on_release:
+                app.root.current = "seventh"
+                root.manager.transition.direction = "left"
+
+<SeventhWindow>:
+    name: "seventh"
+
+    GridLayout:
+        cols:1
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "Call 9872327708 or Message on whatsapp for more imformation."
+
+
+        Button:
+            text: "DO YOU WANT TO EXIT!!!"
+            on_release:
+                app.root.current = "exit()"
+
+<EightWindow>:
+    name: "eight"
+
+    GridLayout:
+        cols:1
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "SO YOU WANT TO PLAY BRAWL STARS"
+
+        Button:
+            text: "Next"
+            on_release:
+                app.root.current = "fourth"
+                root.manager.transition.direction = "left"
